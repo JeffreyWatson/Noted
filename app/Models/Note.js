@@ -9,7 +9,9 @@ export class Note {
   }
 
 
+  get Template() {
 
+  }
 
 
 
