@@ -6,7 +6,7 @@ class NotesService {
 
   createNote(data) {
     let note = new Note(data)
-    appState.notes = [...appState.notes, note]
+    appState.notes = [note, ...appState.notes]
     console.log(appState.notes)
     saveState('notes', appState.notes)
   }
