@@ -1,4 +1,4 @@
-import { generateId } from "../Utils/generateId";
+import { generateId } from "../Utils/generateId.js";
 
 export class Note {
   constructor(data) {
@@ -7,4 +7,13 @@ export class Note {
       this.color = data.color,
       this.body = data.body
   }
+
+
+
+
+
+
+
+
+
 }
