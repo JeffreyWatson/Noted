@@ -7,18 +7,19 @@ export class NotesController {
 
 
 
-    createNote() {
-        try {
-            debugger
-            window.event.preventDefault()
-            const form = window.event.target
-            let data = getFormData(form)
-            console.log("notes getting created in my controller", data)
-            notesService.createNote(data)
-            form.reset()
-        } catch (error) {
-            console.error("creating a note", error)
-        }
+  createNote() {
+    try {
+      debugger
+      window.event?.preventDefault()
+      const form = window.event?.target
+      let data = getFormData(form)
+      console.log("notes getting created in my controller", data)
+      notesService.createNote(data)
+      // @ts-ignore
+      form.reset()
+    } catch (error) {
+      console.error("creating a note", error)
     }
+  }
 
 }

@@ -4,12 +4,12 @@ import { saveState } from "../Utils/Store.js"
 
 class NotesService {
 
-    createNote(data) {
-        let note = new Note(data)
-        appState.notes = [note, ...appState.notes]
-        console.log(appState.notes)
-        saveState('notes', appState.notes)
-    }
+  createNote(data) {
+    let note = new Note(data)
+    appState.notes = [...appState.notes, note]
+    console.log(appState.notes)
+    saveState('notes', appState.notes)
+  }
 
 }
 

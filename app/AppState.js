@@ -8,7 +8,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState('values', Value)
   /** @type {import('./Models/Note').Note[]} */
-  notes = loadState('notes', Note)
+  notes = loadState('notes', [Note])
 }
 
 export const appState = new Proxy(new AppState(), {
