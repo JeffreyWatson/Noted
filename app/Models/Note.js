@@ -5,7 +5,8 @@ export class Note {
     this.id = data.id || generateId(),
       this.name = data.name,
       this.color = data.color,
-      this.body = data.body || ''
+      this.date = new Date()
+    this.body = data.body || ''
   }
 
 
@@ -19,6 +20,10 @@ export class Note {
 
   get Active() {
     return `
+    <div class="d-flex flex-row justify-content-around bgColor text-light">
+    <h4>${this.name}</h4>
+    <h4>Created At: ${this.date.toLocaleDateString()}</h4>
+    </div>
         <textarea class="vh-100 p-2" cols="132" placeholder="Start taking notes..." onblur="app.notesController.editBody('${this.id}')" type="text" name="body" id="body" value="text" style="height: 50px">${this.body}</textarea>
     `
   }
