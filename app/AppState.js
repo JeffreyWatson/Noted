@@ -9,6 +9,10 @@ class AppState extends EventEmitter {
   values = loadState('values', Value)
   /** @type {import('./Models/Note').Note[]} */
   notes = loadState('notes', [Note])
+
+  /** @type {import('./Models/Note').Note[]} */
+  activeNote = loadState('active-note', [Note])
+
 }
 
 export const appState = new Proxy(new AppState(), {
