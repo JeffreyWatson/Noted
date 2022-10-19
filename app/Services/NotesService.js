@@ -12,11 +12,15 @@ class NotesService {
     }
 
     editBody(data, id) {
+
         let note = appState.notes.find(t => t.id == id)
         // @ts-ignore
         note.body = data
         saveState('activeNote', appState.activeNote)
+        saveState('notes', appState.notes)
+
         appState.notes = appState.notes
+        appState.activeNote = appState.activeNote
     }
 
     deleteNote(id) {
@@ -28,8 +32,7 @@ class NotesService {
         let note = appState.notes.find(n => n.id == id)
         appState.activeNote = note
 
-        console.log(appState.activeNote);
-        saveState('activeNote', appState.activeNote)
+
     }
 
 }
