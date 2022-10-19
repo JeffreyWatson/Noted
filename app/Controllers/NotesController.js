@@ -48,6 +48,7 @@ export class NotesController {
     console.log('drawing body', textarea);
     // @ts-ignore
     notesService.editBody(textarea.value, id)
+    Pop.toast('Notes updated.')
   }
 
   async deleteNote(id) {
