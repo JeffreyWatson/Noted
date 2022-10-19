@@ -1,44 +1,63 @@
 /* BASIC STYLES HERE */
 .colorpicker {
-  background-color: transparent;
-  width: 50px;
-  height: 50px;
-  border: none;
-  cursor: pointer;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
 }
 
 .colorpicker::-webkit-color-swatch {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 .logo {
-  height: 45px;
-  width: 200px
+    height: 45px;
+    width: 200px
 }
 
 .create {
-  height: 40px;
-  width: 40px
+    height: 40px;
+    width: 40px
 }
 
 .iconColor {
-  color: #004f62;
+    color: #004f62;
 }
 
 .bgColor {
-  background-color: #004f62;
+    background-color: #004f62;
 }
 
 textarea {
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  width: 100%;
-  height: 100%;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .button {
-  width: 70px;
-  height: 45px;
+    width: 70px;
+    height: 45px;
+}
+
+
+
+.plus {
+    height: 4rem;
+    width: 4rem;
+}
+
+.ad-loc {
+    position: fixed;
+    top: 8em;
+    right: 1em;
+    /* width: 9rem; */
+}
+
+.theme-photo {
+    height: 9rem;
+    width: 9rem;
 }
