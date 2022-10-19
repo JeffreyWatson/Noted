@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js"
 import { notesService } from "../Services/NotesService.js"
 import { getFormData } from "../Utils/FormHandler.js"
+import { Pop } from "../Utils/Pop.js"
 
 
 function _drawNotes() {
@@ -47,6 +48,14 @@ export class NotesController {
     console.log('drawing body', textarea);
     // @ts-ignore
     notesService.editBody(textarea.value, id)
+  }
+
+  async deleteNote(id) {
+    // @ts-ignore
+    if (await confirm('Delete note?', 'Are you sure', 'warning')) {
+      notesService.deleteNote(id)
+      Pop.toast('Deleting Note', 'success')
+    }
   }
 
 }
