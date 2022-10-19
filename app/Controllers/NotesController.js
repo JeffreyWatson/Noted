@@ -13,16 +13,16 @@ function _drawNotes() {
   document.getElementById('notes').innerHTML = template
 }
 
-function _drawBody(id) {
+function _drawBody() {
   let notes = appState.notes
   let template = ''
-  notes.find(n => template += n.Template1)
+  notes.find(n => template += n.Active)
   // @ts-ignore
-  document.getElementById('body').innerHTML = template
+  document.getElementById('active-note').innerHTML = template
 }
 
 function _drawActive() {
-  setHTML('active-note', appState.activeNote.Template1)
+  setHTML('active-note', appState.activeNote.Active)
 }
 
 export class NotesController {
@@ -48,11 +48,12 @@ export class NotesController {
   }
 
   editBody(id) {
-    _drawBody(id)
+    debugger
     let textarea = window.event?.target
-    console.log('drawing body', textarea);
+    console.log('drawing body', appState.activeNote);
     // @ts-ignore
     notesService.editBody(textarea.value, id)
+    _drawBody()
   }
 
   async deleteNote(id) {
