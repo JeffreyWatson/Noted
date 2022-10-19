@@ -20,7 +20,7 @@ export class Note {
 
   get Active() {
     return `
-    <div class="d-flex flex-row justify-content-around bgColor text-light">
+    <div style="background-color: ${this.color}" class="d-flex flex-row justify-content-around text-light">
     <h4>${this.name}</h4>
     <h4>Created At: ${this.date.toLocaleDateString()}</h4>
     </div>
