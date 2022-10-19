@@ -19,8 +19,6 @@ class NotesService {
         saveState('activeNote', appState.activeNote)
         saveState('notes', appState.notes)
 
-        appState.notes = appState.notes
-        appState.activeNote = appState.activeNote
     }
 
     deleteNote(id) {
