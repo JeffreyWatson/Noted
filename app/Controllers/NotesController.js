@@ -53,6 +53,7 @@ export class NotesController {
         console.log('drawing body', appState.activeNote);
         // @ts-ignore
         notesService.editBody(textarea.value, id)
+        Pop.toast("Note Updated", "success")
     }
 
     async deleteNote(id) {
@@ -66,6 +67,7 @@ export class NotesController {
     setActive(id) {
         try {
             notesService.setActive(id)
+
             // this.editBody(id)
         } catch (error) {
             console.error("creating a note", error)
