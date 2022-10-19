@@ -11,7 +11,8 @@ class AppState extends EventEmitter {
   notes = loadState('notes', [Note])
 
   /** @type {import('./Models/Note').Note} */
-  activeNote = loadState('active-note', Note)
+  // @ts-ignore
+  activeNote = null
 
 }
 
