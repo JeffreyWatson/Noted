@@ -11,7 +11,7 @@ export class Note {
 
   get Template() {
     return `
-    < div style="background-color: ${this.color}" >${this.name}</div >
+    <div class="card rounded-pill text-black text-center mt-2" style="background-color: ${this.color}">${this.name}</div>
     `
   }
 
