@@ -22,14 +22,14 @@ function _drawBody(id) {
 }
 
 function _drawActive() {
-  setHTML('body', appState.activeNote.Template1)
+  setHTML('active-note', appState.activeNote.Template1)
 }
 
 export class NotesController {
 
   constructor() {
     appState.on('notes', _drawNotes)
-    appState.on('active-note', _drawActive)
+    // appState.on('active-note', _drawActive)
     _drawNotes()
 
   }
@@ -65,11 +65,10 @@ export class NotesController {
 
   setActive(id) {
     try {
-      debugger
       notesService.setActive(id)
+      this.editBody(id)
     } catch (error) {
       console.error("creating a note", error)
-
     }
   }
 
