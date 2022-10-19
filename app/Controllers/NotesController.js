@@ -48,7 +48,7 @@ export class NotesController {
     }
 
     editBody(id) {
-        debugger
+
         let textarea = window.event?.target
         console.log('drawing body', appState.activeNote);
         // @ts-ignore

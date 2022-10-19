@@ -15,6 +15,7 @@ class NotesService {
         let note = appState.notes.find(t => t.id == id)
         // @ts-ignore
         note.body = data
+        saveState('activeNote', appState.activeNote)
         appState.notes = appState.notes
     }
 
@@ -28,7 +29,7 @@ class NotesService {
         appState.activeNote = note
 
         console.log(appState.activeNote);
-        saveState('active-note', appState.activeNote)
+        saveState('activeNote', appState.activeNote)
     }
 
 }
