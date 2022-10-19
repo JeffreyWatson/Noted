@@ -61,3 +61,9 @@ textarea {
     height: 9rem;
     width: 9rem;
 }
+
+.borz {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
