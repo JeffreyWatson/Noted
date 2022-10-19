@@ -9,11 +9,13 @@ export class Note {
   }
 
 
+  // NOTE Set active in when we click on it
   get Template() {
     return `
-    <div class="card rounded-pill text-black text-center mt-2 selectable d-flex flex-row justify-content-center" style="background-color: ${this.color}" onclick="app.notesController.('${this.id}')">${this.name}<i class="mdi mdi-delete-forever-outline text-danger" onclick="app.notesController.deleteNote('${this.id}')"></i></div>
+    <div class="card rounded-pill text-black text-center mt-2 selectable d-flex flex-row justify-content-center" style="background-color: ${this.color}" onclick="app.notesController.editBody('${this.id}')">${this.name}<i class="mdi mdi-delete-forever-outline text-danger" onclick="app.notesController.deleteNote('${this.id}')"></i></div>
     `
   }
+
 
   get Template1() {
     return `

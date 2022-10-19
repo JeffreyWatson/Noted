@@ -2,6 +2,7 @@ import { appState } from "../AppState.js"
 import { notesService } from "../Services/NotesService.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
+import { setHTML } from "../Utils/Writer.js"
 
 
 function _drawNotes() {
@@ -20,11 +21,15 @@ function _drawBody(id) {
   document.getElementById('body').innerHTML = template
 }
 
+function _drawActive() {
+  setHTML('body', appState.activeNote.Template1)
+}
 
 export class NotesController {
 
   constructor() {
     appState.on('notes', _drawNotes)
+    appState.on('active-note', _drawActive)
     _drawNotes()
 
   }
@@ -48,7 +53,6 @@ export class NotesController {
     console.log('drawing body', textarea);
     // @ts-ignore
     notesService.editBody(textarea.value, id)
-    Pop.toast('Notes updated.')
   }
 
   async deleteNote(id) {
@@ -56,6 +60,16 @@ export class NotesController {
     if (await Pop.confirm('Delete note?', 'Are you sure', 'Yes')) {
       notesService.deleteNote(id)
       Pop.toast('Deleting Note', 'success')
+    }
+  }
+
+  setActive(id) {
+    try {
+      debugger
+      notesService.setActive(id)
+    } catch (error) {
+      console.error("creating a note", error)
+
     }
   }
 
